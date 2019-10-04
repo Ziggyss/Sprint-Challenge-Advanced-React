@@ -4,6 +4,13 @@ import App from "./App";
 import "@testing-library/jest-dom/extend-expect";
 import * as rtl from "@testing-library/react";
 
+let tools;
+
+beforeEach(() => {
+  rtl.cleanup();
+  tools = rtl.render(<App />);
+});
+
 it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<App />, div);
@@ -11,6 +18,6 @@ it("renders without crashing", () => {
 });
 
 it("Renders the country information", () => {
-  const USA = tools.queryByText(/United States/);
+  expect(tools.queryByText(/United States/));
   expect(USA).toBeInTheDocument();
 });
