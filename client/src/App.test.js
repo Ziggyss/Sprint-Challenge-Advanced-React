@@ -17,7 +17,6 @@ it("renders without crashing", () => {
   ReactDOM.unmountComponentAtNode(div);
 });
 
-it("Renders the country information", () => {
-  expect(tools.queryByText(/United States/));
-  expect(USA).toBeInTheDocument();
+it("Renders the nav correctly", () => {
+  expect(tools.queryByText(/Women's World Cup Player Data/)).toBeInTheDocument;
 });
