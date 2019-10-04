@@ -15,7 +15,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(playerApi)
+    axios
+      .get(playerApi)
       .then(response => {
         this.setState({ players: response.data });
       })
